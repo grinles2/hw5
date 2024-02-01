@@ -2,19 +2,18 @@ import random
 
 
 class Student:
-    def __init__(self, name, age, work, girl, gender, glad, progress, alive, pet, money, home, hw, sleep):
+    def __init__(self, name):
         self.name = name
-        self.age = age
-        self.work = work
+        self.age = 0
+        self.work = False
         self.girl = False  # девушку не завезли в обнову
-        self.gender = gender
         self.glad = 30
         self.progress = 0
         self.alive = True
         self.pet = False
         self.money = 150
-        self.home = home
-        self.hw = hw
+        self.home = False
+        self.hw = 0
 
     def to_college(self):
         self.progress += 1
@@ -22,22 +21,20 @@ class Student:
         self.hw += 2
         self.money -= 10  # на проезд
         print("Ну что же,пора идти в универ")
-        # pass
 
     def to_relax(self):
         self.glad += 15
         self.progress -= 0.5
         self.money -= 5
         print("Пора отдохнуть")
-        # pass
 
     def to_work(self):
         print("Деньги нужны")
         self.money += 50
         self.glad -= 2
         self.progress += 2
+        self.work = True
         # мы не знаем где работаем может по профессии и поэтому получаем прогресс
-        # pass
 
     def is_alive(self):
         if self.progress < -0.5:
@@ -52,26 +49,26 @@ class Student:
             self.glad += 50
 
     def to_find_girl(self):
+        self.girl = True
         self.glad += 70
         self.money -= 100
+        self.girl =  True
         print("Ура я не одинокий волк")
-        # pass
 
     def to_pet(self):
         print("Купить друга")
         self.money -= 40  # на корм и покупку
         self.glad += 20
         self.progress -= 0.5  # отвлекает от учёбы так как мы хотим вернуться домой к нему
-        # pass
+        self.pet = True
 
     def find_home(self):
         self.money -= 150
         self.glad += 10  # мы больше не бомжи
-        # pass
+        self.home = True
 
     def to_sleep(self):
         self.glad += 5
-        # pass
 
     def do_hw(self):
         self.hw -= 2
@@ -109,8 +106,6 @@ class Student:
 
 Alex = Student("Alex")
 for day in range(1, 366):
-    if Alex.alive == False:
+    if Alex.is_alive == False:
         break
     Alex.live(day)
-
-
