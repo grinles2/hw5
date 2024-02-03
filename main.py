@@ -106,8 +106,8 @@ class Student:
         self.is_alive()
 
 
-Alex = Student("Alex")
+alex = Student("Alex")
 for day in range(1, 366):
-    if Alex.is_alive == False:
+    if alex.alive == False:
         break
-    Alex.live(day)
+    alex.live(day)
