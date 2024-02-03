@@ -23,27 +23,27 @@ class Student:
         print("Ну что же,пора идти в универ")
 
     def to_relax(self):
-        self.glad += 15
+        self.glad += 10
         self.progress -= 0.5
-        self.money -= 5
+        self.money -= 20
         print("Пора отдохнуть")
 
     def to_work(self):
         print("Деньги нужны")
-        self.money += 50
-        self.glad -= 2
+        self.money += 70
+        self.glad -= 5
         self.progress += 2
         self.work = True
         # мы не знаем где работаем может по профессии и поэтому получаем прогресс
 
     def is_alive(self):
-        if self.progress < -0.5:
+        if self.progress < 0:
             print("Отчислен!")
             self.alive = False
-        elif self.glad <= 0:
+        elif self.glad <= 5:
             print("Тебе к психиологу бро")
             self.alive = False
-        elif self.progress > 5:
+        elif self.progress > 100:
             print("Вы закончили универ")
             self.alive = False
             self.glad += 50
@@ -51,8 +51,8 @@ class Student:
     def to_find_girl(self):
         self.girl = True
         self.glad += 70
-        self.money -= 100
-        self.girl =  True
+        self.money -= 200
+        self.girl = True
         print("Ура я не одинокий волк")
 
     def to_pet(self):
