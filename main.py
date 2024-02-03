@@ -78,6 +78,7 @@ class Student:
     def end_of_the_day(self):
         print(f"glad =", {self.glad})
         print(f"progress = {round(self.progress), 2}")
+        print(f"money =", {self.money})
 
     def live(self, day):
         d = f"Day{day} of {self.name} life"
