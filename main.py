@@ -56,7 +56,7 @@ class Student:
         print("Ура я не одинокий волк")
 
     def to_pet(self):
-        print("Купить друга")
+        print("Купить Питомца")
         self.money -= 40  # на корм и покупку
         self.glad += 20
         self.progress -= 0.5  # отвлекает от учёбы так как мы хотим вернуться домой к нему
