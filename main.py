@@ -10,8 +10,8 @@ class Student:
         self.glad = 30
         self.progress = 0
         self.alive = True
-        self.pet = False
-        self.money = 150
+        self.pet = 0
+        self.money = 500
         self.home = False
         self.hw = 0
 
@@ -25,12 +25,12 @@ class Student:
     def to_relax(self):
         self.glad += 10
         self.progress -= 0.5
-        self.money -= 20
+        self.money -= 10
         print("Пора отдохнуть")
 
     def to_work(self):
         print("Деньги нужны")
-        self.money += 70
+        self.money += 320
         self.glad -= 5
         self.progress += 2
         self.work = True
@@ -51,7 +51,7 @@ class Student:
     def to_find_girl(self):
         self.girl = True
         self.glad += 70
-        self.money -= 200
+        self.money -= 100
         self.girl = True
         print("Ура я не одинокий волк")
 
@@ -60,10 +60,10 @@ class Student:
         self.money -= 40  # на корм и покупку
         self.glad += 20
         self.progress -= 0.5  # отвлекает от учёбы так как мы хотим вернуться домой к нему
-        self.pet = True
+        self.pet += 1
 
     def find_home(self):
-        self.money -= 150
+        self.money -= 100
         self.glad += 10  # мы больше не бомжи
         self.home = True
 
@@ -79,6 +79,7 @@ class Student:
         print(f"glad =", {self.glad})
         print(f"progress = {round(self.progress), 2}")
         print(f"money =", {self.money})
+        print(f"pets =", {self.pet})
 
     def live(self, day):
         d = f"Day{day} of {self.name} life"
